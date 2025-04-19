@@ -1,10 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// Vite configuration
 export default defineConfig({
-  base: './', // Ensures correct relative paths in deployed static files
+  base: '/', 
   plugins: [react()],
   build: {
-    outDir: 'dist' // optional, default is 'dist'
+    outDir: 'dist', 
+    rollupOptions: {
+      input: '/index.html'
+    }
   }
 })
